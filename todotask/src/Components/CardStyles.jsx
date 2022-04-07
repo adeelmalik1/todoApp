@@ -4,7 +4,7 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 0px 210px 80px;
-  margin:10px;
+  margin: 10px;
   grid-template-areas: "image" "text" "stats";
   border-radius: 18px;
   background: #000;

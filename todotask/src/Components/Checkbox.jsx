@@ -1,6 +1,4 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
-
 const Input = styled.input`
   height: 0;
   width: 0;
@@ -11,7 +9,7 @@ const Input = styled.input`
 const Label = styled.label`
   position: relative;
   display: inline-block;
-  cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   margin: 0.6em 1em;
 `;
 
@@ -29,7 +27,6 @@ const rotate = keyframes`
 const Indicator = styled.div`
   width: 1.2em;
   height: 1.2em;
-  background: #e6e6e6;
   position: absolute;
   top: 0em;
   left: -1.6em;
@@ -72,10 +69,11 @@ export default function Checkbox({
   value,
   checked,
   onChange,
+  onClick,
   name,
   id,
   label,
-  disabled
+  disabled,
 }) {
   return (
     <Label htmlFor={id} disabled={disabled}>
@@ -86,10 +84,11 @@ export default function Checkbox({
         name={name}
         value={value}
         disabled={disabled}
-        checked={checked}
+        checked={!checked ? false : true}
         onChange={onChange}
+        onClick={onClick}
       />
-      <Indicator />
+      <Indicator checked={false} style={{ background: "black" }} />
     </Label>
   );
 }

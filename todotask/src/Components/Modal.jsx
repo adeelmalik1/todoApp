@@ -1,15 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import styled, { createGlobalStyle } from "styled-components";
-
-const portalRoot = document.getElementById("portal-root");
 
 const Background = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #000;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -50px;
   display: flex;
   justify-content: center;
   align-items: center;
